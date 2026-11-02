@@ -1,0 +1,279 @@
+
+/* =====================================
+   GENERAL SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fbfc;
+    color: #142d4b;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+    width: 100%;
+    background-color: #102b4e;
+    padding: 20px 40px;
+}
+
+.compile ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.compile ul li a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.compile ul li a:hover {
+    color: #91c5e4 !important;
+}
+
+/* =====================================
+   HOME PAGE
+===================================== */
+
+#home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 10%;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(184, 155, 114, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #f5f1ea,
+            #eae5dc
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* INTRODUCTION */
+
+#home .page {
+    max-width: 550px;
+}
+
+#home .intro h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #142d4b !important;
+    opacity: 1 !important;
+}
+
+#home .intro h1 span {
+    color: #285987 !important;
+    opacity: 1 !important;
+}
+
+#home .intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #142d4b !important;
+    opacity: 1 !important;
+}
+
+/* HOME PICTURE */
+
+#home .picture {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, .5);
+    border: 2px solid #b89b72;
+    box-shadow: 15px 15px 0 rgba(20, 45, 75, .1);
+}
+
+#home .picture img {
+    width: 250px;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+}
+
+/* =====================================
+   ABOUT ME PAGE
+===================================== */
+
+#about-me {
+    min-height: 100vh;
+    padding: 60px 8%;
+    background-color: #f8fbfc;
+}
+
+/* ABOUT ME TITLE */
+
+#about-me .main {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#about-me .main h1 {
+    font-size: 38px;
+    color: #102b4e;
+    letter-spacing: 2px;
+}
+
+/* ABOUT ME CONTENT */
+
+#about-me .personal-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* INFORMATION CARDS */
+
+#about-me .personal-info,
+#about-me .education,
+#about-me .personal-intrest,
+#about-me .my-information {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dce8ef;
+    box-shadow: 0 8px 25px rgba(16, 43, 78, .08);
+    border-radius: 5px;
+}
+
+/* CARD HEADINGS */
+
+#about-me .personal-intro h3 {
+    font-size: 21px;
+    color: #285987;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #91c5e4;
+    padding-bottom: 12px;
+}
+
+/* CARD PARAGRAPHS */
+
+#about-me .personal-intro p {
+    font-size: 15px;
+    color: #142d4b;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* PERSONAL INTEREST */
+
+#about-me .personal-intrest p {
+    text-align: justify;
+}
+
+/* ABOUT ME DESCRIPTION */
+
+#about-me .my-information p {
+    text-align: justify;
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 800px) {
+
+    #home {
+        padding: 50px 5%;
+        gap: 30px;
+    }
+
+    #home .intro h1 {
+        font-size: 40px;
+    }
+
+    #home .picture img {
+        width: 220px;
+        height: 260px;
+    }
+
+    #about-me .personal-intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .compile ul {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    #home .intro h1 {
+        font-size: 36px;
+    }
+
+    #home .intro p {
+        font-size: 16px;
+    }
+
+    #home .picture img {
+        width: 200px;
+        height: 240px;
+    }
+
+    #about-me {
+        padding: 45px 20px;
+    }
+
+    #about-me .main h1 {
+        font-size: 28px;
+    }
+
+    #about-me .personal-intro {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #about-me .personal-info,
+    #about-me .education,
+    #about-me .personal-intrest,
+    #about-me .my-information {
+        padding: 22px;
+    }
+}
+
+
+
