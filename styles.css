@@ -24,29 +24,28 @@ body {
 ===================================== */
 
 nav {
-    width: 100%;
-    background-color: #102b4e;
-    padding: 20px 40px;
+    background-color: #541B2B;
+    padding: 20px 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
-.compile ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 35px;
+nav h2{
+    color: white;
+    font-size: 20px;
+}
+
+.compile ul{
+   display: flex;
     list-style: none;
+    gap: 30px;
 }
 
 .compile ul li a {
-    color: #ffffff !important;
+    color: white;
     text-decoration: none;
     font-size: 15px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.compile ul li a:hover {
-    color: #91c5e4 !important;
 }
 
 /* =====================================
