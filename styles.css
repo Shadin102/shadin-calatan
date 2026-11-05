@@ -193,6 +193,16 @@ nav h2{
     background-color: #7A3045;
 }
 
+/* CLICKABLE CARD TITLES */
+
+.personal-intro summary {
+    color: #541B2B;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
 /* =====================================
    TABLET RESPONSIVE
 ===================================== */
