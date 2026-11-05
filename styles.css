@@ -61,17 +61,7 @@ nav {
     gap: 60px;
     padding: 70px 10%;
 
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(184, 155, 114, 0.15),
-            transparent 35%
-        ),
-        linear-gradient(
-            120deg,
-            #f5f1ea,
-            #eae5dc
-        );
+    background-color: #541B2B;
 
     position: relative;
     overflow: hidden;
