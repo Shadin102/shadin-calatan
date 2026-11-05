@@ -193,26 +193,6 @@ nav h2{
     background-color: #7A3045;
 }
 
-
-/* INTERACTIVE CARD EFFECT */
-
-.personal-info,
-.education,
-.personal-intrest,
-.my-information {
-    cursor: pointer;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.personal-info:hover,
-.education:hover,
-.personal-intrest:hover,
-.my-information:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(84, 27, 43, 0.2);
-}
-
 /* =====================================
    TABLET RESPONSIVE
 ===================================== */
