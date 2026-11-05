@@ -53,59 +53,46 @@ nav h2{
 ===================================== */
 
 #home {
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    padding: 70px 10%;
-
     background-color: #541B2B;
-
-    position: relative;
-    overflow: hidden;
+    min-height: 90vh;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* INTRODUCTION */
 
-#home .page {
-    max-width: 550px;
+.intro {
+    width: 50%;
 }
 
-#home .intro h1 {
-    font-size: 55px;
+.intro h1 {
+    color: #F5E9E5;
+    font-size: 40px;
     margin-bottom: 20px;
-    letter-spacing: 2px;
-    color: #F5E9E5 !important;
-    opacity: 1 !important;
 }
 
-#home .intro h1 span {
-    color: #E8C6A0 !important;
-    opacity: 1 !important;
-}
-
-#home .intro p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #FFFFFF !important;
-    opacity: 1 !important;
+.intro p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* HOME PICTURE */
 
-#home .picture {
+.picture {
+    background-color: #F5E9D8;
     padding: 12px;
-    background-color: rgba(255, 255, 255, .5);
-    border: 2px solid #b89b72;
-    box-shadow: 15px 15px 0 rgba(20, 45, 75, .1);
+    border: 2px solid #E8C6A0;
 }
 
-#home .picture img {
+.picture img {
     width: 250px;
     height: 290px;
     object-fit: cover;
     display: block;
+}
 }
 
 /* =====================================
@@ -113,27 +100,28 @@ nav h2{
 ===================================== */
 
 #about-me {
+    background-color: #F8F5F2;
     min-height: 100vh;
-    padding: 60px 8%;
-    background-color: #f8fbfc;
+    padding: 50px;
 }
 
 /* ABOUT ME TITLE */
 
-#about-me .main {
+.main {
+    background-color: #541B2B;
     text-align: center;
-    margin-bottom: 50px;
+    padding: 30px;
+    margin-bottom: 30px;
 }
 
-#about-me .main h1 {
-    font-size: 38px;
-    color: #102b4e;
-    letter-spacing: 2px;
+.main h1 {
+    color: white;
+    font-size: 32px;
 }
 
 /* ABOUT ME CONTENT */
 
-#about-me .personal-intro {
+.personal-intro {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
@@ -141,45 +129,36 @@ nav h2{
 
 /* INFORMATION CARDS */
 
-#about-me .personal-info,
-#about-me .education,
-#about-me .personal-intrest,
-#about-me .my-information {
-    background-color: #ffffff;
-    padding: 30px;
-    border: 1px solid #dce8ef;
-    box-shadow: 0 8px 25px rgba(16, 43, 78, .08);
-    border-radius: 5px;
+.personal-info,
+.education,
+.personal-intrest,
+.my-information {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #E8DCD5;
 }
 
 /* CARD HEADINGS */
 
-#about-me .personal-intro h3 {
-    font-size: 21px;
-    color: #285987;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #91c5e4;
-    padding-bottom: 12px;
+.personal-intro h3 {
+    color: #541B2B;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 /* CARD PARAGRAPHS */
 
-#about-me .personal-intro p {
+.personal-intro p {
+    color: #333333;
     font-size: 15px;
-    color: #142d4b;
-    line-height: 1.8;
+    line-height: 1.6;
     margin-bottom: 10px;
 }
 
-/* PERSONAL INTEREST */
+/* PERSONAL INTEREST AND ABOUT ME DESCRIPTION */
 
-#about-me .personal-intrest p {
-    text-align: justify;
-}
-
-/* ABOUT ME DESCRIPTION */
-
-#about-me .my-information p {
+.personal-intrest p,
+.my-information p {
     text-align: justify;
 }
 
@@ -189,23 +168,14 @@ nav h2{
 
 @media (max-width: 800px) {
 
-    #home {
-        padding: 50px 5%;
-        gap: 30px;
+    #about-me {
+        padding: 30px;
     }
 
-    #home .intro h1 {
-        font-size: 40px;
-    }
-
-    #home .picture img {
-        width: 220px;
-        height: 260px;
-    }
-
-    #about-me .personal-intro {
+    .personal-intro {
         grid-template-columns: 1fr;
     }
+
 }
 
 /* =====================================
@@ -215,54 +185,34 @@ nav h2{
 @media (max-width: 600px) {
 
     nav {
-        padding: 20px;
+        padding: 15px;
     }
 
     .compile ul {
         justify-content: center;
-        gap: 25px;
-    }
-
-    #home {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 20px;
-        gap: 40px;
-    }
-
-    #home .intro h1 {
-        font-size: 36px;
-    }
-
-    #home .intro p {
-        font-size: 16px;
-    }
-
-    #home .picture img {
-        width: 200px;
-        height: 240px;
+        gap: 20px;
     }
 
     #about-me {
-        padding: 45px 20px;
+        padding: 20px;
     }
 
-    #about-me .main h1 {
-        font-size: 28px;
+    .main h1 {
+        font-size: 24px;
     }
 
-    #about-me .personal-intro {
+    .personal-intro {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 15px;
     }
 
-    #about-me .personal-info,
-    #about-me .education,
-    #about-me .personal-intrest,
-    #about-me .my-information {
-        padding: 22px;
+    .personal-info,
+    .education,
+    .personal-intrest,
+    .my-information {
+        padding: 20px;
     }
+
 }
-
 
 
