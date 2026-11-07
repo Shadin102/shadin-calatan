@@ -60,13 +60,6 @@ nav h2{
     align-items: center;
 }
 
-/*page layout*/
-.page {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-
 /* INTRODUCTION */
 
 .intro {
