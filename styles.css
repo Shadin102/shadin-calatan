@@ -87,8 +87,8 @@ nav h2{
 }
 
 .picture img {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
     display: block;
 }
