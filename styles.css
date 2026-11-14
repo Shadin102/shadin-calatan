@@ -165,8 +165,8 @@ body {
 
 .picture img {
     width: 100%;
-    max-width: 340px;
-    height: 430px;
+    max-width: 500px;
+    height: auto;
 
     object-fit: cover;
 
