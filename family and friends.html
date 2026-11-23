@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family and Friends</title>
+</head>
+<body>
+     <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+
+        <h2 class="logo">MY PORTFOLIO</h2>
+
+        <div class="compile">
+            <ul>
+
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+
+                <li>
+                    <a href="personal information.html">
+                        PERSONAL INFORMATION
+                    </a>
+                </li>
+
+                <li>
+                    <a href="achivements.html" class="active">
+                        ACHIEVEMENTS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="family and friends.html">
+                        FAMILY AND FRIENDS
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="friends">
+        <img src="frends citcs.jpg" alt="Friends"
+             onclick="openImage(this)">
+        <p>My friends in Citcs, a new environment new people and new expirences</p>
+
+        <img src="friends in pharma.png" alt="friends pharma"
+             onclick="openImage(this)">
+        <p>My friends during my pharma days before shifting, we dispite the distance
+            we still stay connected
+        </p>
+
+        <img src="freinds since foever.png" alt="friends sinch elem"
+             onclick="openImage(this)">
+        <p>MY friends from elementary,highschool till today though are busy with our own lives
+            we still stay connected online
+        </p>
+    </div>
+
+    <div class="family">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+
+    <!-- Image popup -->
+    <div id="imageModal" onclick="closeImage()">
+        <span>&times;</span>
+        <img id="enlargedImage" alt="Enlarged photo">
+    </div>
+
+    <script>
+        function openImage(img) {
+            document.getElementById("imageModal").style.display = "block";
+            document.getElementById("enlargedImage").src = img.src;
+        }
+
+        function closeImage() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Shadin M. Calatan | Personal Portfolio
+        </p>
+
+    </footer>
+
+</body>
+</html>
