@@ -147,17 +147,29 @@
 
 
             <!-- ARTWORK GALLERY -->
-            <article class="info-card art-card">
-                <h2 class="info-card-title">My Artworks</h2>
+<article class="info-card art-card">
+    <h2 class="info-card-title">My Artworks</h2>
 
-                <div class="art-gallery">
-                    <img src="background.png"
-                         alt="Traditional or digital artwork">
+    <div class="art-gallery">
+        <img src="background.png"
+             alt="Traditional or digital artwork"
+             onclick="openLightbox(this.src)">
 
-                    <img src="food.png"
-                         alt="Food illustration artwork">
-                </div>
-            </article>
+        <img src="food.png"
+             alt="Food illustration artwork"
+             onclick="openLightbox(this.src)">
+    </div>
+</article>
+
+<!-- IMAGE LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+
+    <img id="lightbox-img"
+         class="lightbox-content"
+         alt="Expanded artwork"
+         onclick="event.stopPropagation()">
+</div>
 
         </div>
 
