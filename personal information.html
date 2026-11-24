@@ -92,7 +92,7 @@
                     </p>
                     <p><strong>Province:</strong> Benguet</p>
                     <p><strong>Height:</strong> 4'11</p>
-                     <p><strong>Blood type:</strong> A+</p>
+                    <p><strong>Blood type:</strong> A+</p>
                 </div>
             </article>
 
@@ -154,16 +154,43 @@
 
                 <div class="art-gallery">
                     <img src="background.png"
-                         alt="Traditional or digital artwork">
+                         alt="Traditional or digital artwork"
+                         onclick="openImage(this)">
 
                     <img src="food.png"
-                         alt="Food illustration artwork">
+                         alt="Food illustration artwork"
+                         onclick="openImage(this)">
                 </div>
             </article>
 
         </div>
 
     </section>
+
+
+    <!-- Image popup -->
+    <div id="imageModal" onclick="closeImage()">
+        <span onclick="closeImage()">&times;</span>
+        <img id="enlargedImage" alt="Enlarged photo">
+    </div>
+
+    <script>
+        function openImage(img) {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "flex";
+            document.getElementById("enlargedImage").src = img.src;
+        }
+
+        function closeImage() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeImage();
+            }
+        });
+    </script>
 
 
     <!-- FOOTER -->
