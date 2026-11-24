@@ -21,8 +21,8 @@
     --tint-amber: rgba(245, 158, 11, 0.12);
     --tint-indigo: rgba(99, 102, 241, 0.12);
 
-    --nav-h: 52px;
-    --footer-h: 34px;
+    --nav-h: 58px;
+    --footer-h: 38px;
 }
 
 * {
@@ -66,7 +66,7 @@ img {
 .navbar {
     height: var(--nav-h);
     min-height: var(--nav-h);
-    padding: 0 24px;
+    padding: 0 36px;
     background: rgba(15, 22, 35, 0.92);
     border-bottom: 1px solid var(--border-subtle);
     display: flex;
@@ -78,20 +78,20 @@ img {
 
 .logo {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.86rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     white-space: nowrap;
 }
 
 .logo::before {
     content: "";
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 2px;
     background: var(--accent-cobalt);
     box-shadow: 0 0 10px var(--accent-cobalt);
@@ -101,16 +101,16 @@ img {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .compile ul li a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     color: var(--text-secondary);
-    padding: 6px 11px;
+    padding: 8px 14px;
     border-radius: 6px;
     border: 1px solid transparent;
     transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -134,7 +134,7 @@ img {
    ========================================================= */
 .welcome {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -145,7 +145,7 @@ img {
 .page-navigation {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .previous-button,
@@ -153,10 +153,10 @@ img {
 .preview-button,
 .personal-info-button {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-    padding: 7px 12px;
+    padding: 9px 15px;
     border-radius: 6px;
     border: 1px solid var(--border-strong);
     background: var(--bg-elevated);
@@ -176,8 +176,8 @@ img {
 }
 
 .personal-info-button {
-    margin-top: 16px;
-    padding: 9px 16px;
+    margin-top: 22px;
+    padding: 11px 20px;
     background: var(--accent-cobalt);
     border-color: var(--accent-cobalt);
     color: #FFFFFF;
@@ -191,74 +191,74 @@ img {
 }
 
 /* =========================================================
-   PAGE 1: HOME (#home) -> TEXT LEFT | SQUARE PICTURE RIGHT
+   PAGE 1: HOME (#home) -> TEXT LEFT | LARGE SQUARE PICTURE RIGHT
    ========================================================= */
 #home {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 16px 28px;
+    padding: 20px 36px;
     min-height: 0;
 }
 
 .page {
     width: 100%;
-    max-width: 1120px;
+    max-width: 1380px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.35fr 380px;
-    gap: 20px;
+    grid-template-columns: 1.45fr 440px;
+    gap: 28px;
     align-items: center;
 }
 
 .intro {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 26px 30px;
+    border-radius: 12px;
+    padding: 36px 42px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-height: 380px;
+    min-height: 440px;
 }
 
 .intro h1 {
-    font-size: clamp(1.85rem, 3vw, 2.55rem);
+    font-size: clamp(2.15rem, 3.2vw, 3rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .intro h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     font-weight: 500;
     color: var(--accent-cobalt);
     width: 100%;
-    margin-bottom: 14px;
-    padding-bottom: 14px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--border-subtle);
 }
 
 .intro p:not(.welcome) {
-    font-size: 0.92rem;
-    line-height: 1.58;
+    font-size: 1.02rem;
+    line-height: 1.65;
     color: var(--text-secondary);
-    max-width: 56ch;
+    max-width: 60ch;
 }
 
 .picture {
-    width: 380px;
-    height: 380px;
+    width: 440px;
+    height: 440px;
     max-width: 100%;
     aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,21 +270,21 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--border-subtle);
 }
 
 /* =========================================================
-   PAGE 2: PERSONAL INFORMATION (#personal) -> SQUARE BENTO TILES
+   PAGE 2: PERSONAL INFORMATION (#personal) -> SCALED SQUARE BENTO TILES
    ========================================================= */
 #personal {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 12px;
-    padding: 12px 24px;
-    max-width: 1180px;
+    gap: 16px;
+    padding: 16px 36px;
+    max-width: 1380px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
@@ -298,22 +298,22 @@ img {
 }
 
 .main h1 {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.15;
 }
 
 .main p:not(.welcome) {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .personal-intro {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 18px;
     align-items: stretch;
 }
 
@@ -321,22 +321,22 @@ img {
     aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 14px;
+    border-radius: 12px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     min-height: 0;
     overflow: hidden;
 }
 
 .info-card-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    padding: 5px 9px;
+    padding: 6px 10px;
     border-radius: 6px;
     border-left: 3px solid var(--accent-cobalt);
     background: var(--tint-cobalt);
@@ -368,9 +368,9 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
-    font-size: 0.75rem;
-    line-height: 1.35;
+    gap: 7px;
+    font-size: 0.84rem;
+    line-height: 1.42;
     color: var(--text-secondary);
 }
 
@@ -391,7 +391,7 @@ img {
     min-height: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -399,7 +399,7 @@ img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--border-subtle);
     cursor: pointer;
     transition: border-color 0.15s ease;
@@ -410,16 +410,16 @@ img {
 }
 
 /* =========================================================
-   PAGE 3: ACHIEVEMENTS (#achievement) -> SQUARE CARDS
+   PAGE 3: ACHIEVEMENTS (#achievement) -> SCALED SQUARE CARDS
    ========================================================= */
 #achievement {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 14px;
-    padding: 12px 28px;
-    max-width: 960px;
+    gap: 18px;
+    padding: 16px 36px;
+    max-width: 1120px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
@@ -433,44 +433,44 @@ img {
 }
 
 .ach h1 {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.15;
 }
 
 .ach p:not(.welcome) {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .images {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 380px));
+    grid-template-columns: repeat(2, minmax(0, 440px));
     justify-content: center;
-    gap: 24px;
+    gap: 32px;
 }
 
 .achievement-card {
     aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 14px;
+    border-radius: 12px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     min-height: 0;
 }
 
 .achievement-header {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 6px 11px;
     border-radius: 6px;
     border-left: 3px solid var(--accent-teal);
     background: var(--tint-teal);
@@ -489,15 +489,15 @@ img {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .achievement-content img {
     width: 100%;
     aspect-ratio: 4 / 3;
-    max-height: 185px;
+    max-height: 225px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--border-subtle);
     cursor: pointer;
     transition: border-color 0.15s ease;
@@ -508,29 +508,29 @@ img {
 }
 
 .achievement-content p {
-    font-size: 0.78rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.45;
     color: var(--text-secondary);
 }
 
 /* =========================================================
-   PAGE 4: FAMILY AND FRIENDS (.friends-section) -> SQUARE CARDS
+   PAGE 4: FAMILY AND FRIENDS (.friends-section) -> SCALED SQUARE CARDS
    ========================================================= */
 .friends-section {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 12px;
-    padding: 12px 24px;
-    max-width: 1280px;
+    gap: 14px;
+    padding: 14px 36px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
 }
 
 .friends-header h1 {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -538,28 +538,28 @@ img {
 .ff-split-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 14px;
+    gap: 18px;
     align-items: stretch;
 }
 
 .ff-column {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     min-height: 0;
 }
 
 .ff-group-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 6px 11px;
     border-radius: 6px;
     border-left: 3px solid var(--accent-cobalt);
     background: var(--tint-cobalt);
@@ -575,13 +575,13 @@ img {
 .friends {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    gap: 12px;
 }
 
 .family {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 12px;
 }
 
 .friend-card {
@@ -589,10 +589,10 @@ img {
     background: var(--bg-elevated);
     border: 1px solid var(--border-subtle);
     border-radius: 8px;
-    padding: 8px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     min-height: 0;
     overflow: hidden;
     transition: border-color 0.15s ease;
@@ -609,7 +609,7 @@ img {
 .friend-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    max-height: 125px;
+    max-height: 150px;
     object-fit: cover;
     object-position: top center;
     border-radius: 6px;
@@ -618,8 +618,8 @@ img {
 }
 
 .friend-card p {
-    font-size: 0.7rem;
-    line-height: 1.32;
+    font-size: 0.76rem;
+    line-height: 1.36;
     color: var(--text-secondary);
 }
 
@@ -669,7 +669,7 @@ img {
 
 .footer p {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     letter-spacing: 0.04em;
     color: var(--text-muted);
 }
@@ -677,7 +677,7 @@ img {
 /* =========================================================
    ZERO-SCROLL DESKTOP LOCK & RESPONSIVE FALLBACK
    ========================================================= */
-@media (min-width: 960px) and (min-height: 660px) {
+@media (min-width: 960px) and (min-height: 680px) {
     html,
     body {
         overflow: hidden;
@@ -708,7 +708,11 @@ img {
     .picture {
         width: 100%;
         height: auto;
-        max-width: 340px;
+        max-width: 380px;
+    }
+
+    .intro {
+        min-height: auto;
     }
 
     .info-card,
@@ -726,7 +730,7 @@ img {
     .picture img,
     .friend-card img,
     .achievement-content img {
-        max-height: 240px;
+        max-height: 260px;
     }
 }
 
