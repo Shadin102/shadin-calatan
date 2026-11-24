@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family and Friends</title>
+    <title>Family and Friends | Shadin M. Calatan</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
 
         <h2 class="logo">MY PORTFOLIO</h2>
@@ -26,13 +26,13 @@
                 </li>
 
                 <li>
-                    <a href="achivements.html" class="active">
+                    <a href="achivements.html">
                         ACHIEVEMENTS
                     </a>
                 </li>
 
                 <li>
-                    <a href="family and friends.html">
+                    <a href="family and friends.html" class="active">
                         FAMILY AND FRIENDS
                     </a>
                 </li>
@@ -42,44 +42,91 @@
 
     </nav>
 
-    <div class="friends">
-        <img src="frends citcs.jpg" alt="Friends"
-             onclick="openImage(this)">
-        <p>My friends in Citcs, a new environment new people and new expirences</p>
+    <!-- FAMILY AND FRIENDS SECTION -->
+    <section class="friends-section">
 
-        <img src="friends in pharma.png" alt="friends pharma"
-             onclick="openImage(this)">
-        <p>My friends during my pharma days before shifting, we dispite the distance
-            we still stay connected
-        </p>
+        <div class="friends-header">
+            <p class="welcome">CONNECTIONS &amp; MEMORIES</p>
+            <h1>FAMILY AND FRIENDS</h1>
+        </div>
 
-        <img src="freinds since foever.png" alt="friends sinch elem"
-             onclick="openImage(this)">
-        <p>MY friends from elementary,highschool till today though are busy with our own lives
-            we still stay connected online
-        </p>
-    </div>
+        <div class="ff-split-grid">
 
-    <div class="family">
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
+            <!-- FRIENDS COLUMN -->
+            <div class="ff-column">
+                <h2 class="ff-group-title friends-title">Friends</h2>
+
+                <div class="friends">
+                    <article class="friend-card">
+                        <img src="frends citcs.jpg"
+                             alt="Friends in CITCS"
+                             onclick="openImage(this)">
+                        <p>My friends in CITCS—a new environment, new people, and new experiences.</p>
+                    </article>
+
+                    <article class="friend-card">
+                        <img src="friends in pharma.png"
+                             alt="Friends in Pharmacy"
+                             onclick="openImage(this)">
+                        <p>My friends during my Pharmacy days before shifting; despite the distance, we still stay connected.</p>
+                    </article>
+
+                    <article class="friend-card">
+                        <img src="freinds since foever.png"
+                             alt="Friends since elementary and high school"
+                             onclick="openImage(this)">
+                        <p>My friends from elementary and high school till today—though busy with our own lives, we still stay connected online.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- FAMILY COLUMN -->
+            <div class="ff-column">
+                <h2 class="ff-group-title family-title">Family</h2>
+
+                <div class="family">
+                    <article class="friend-card family-card">
+                        <img src="mom.png"
+                             alt="Mother"
+                             onclick="openImage(this)">
+                        <p>My mother—we might not always agree on things and I can be stubborn at times, but I wouldn't be here without you.</p>
+                    </article>
+
+                    <article class="friend-card family-card">
+                        <img src="dad.png"
+                             alt="Father"
+                             onclick="openImage(this)">
+                        <p>My father—he might be strict, but I know he cares even when he doesn't show it.</p>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- Image popup -->
     <div id="imageModal" onclick="closeImage()">
-        <span>&times;</span>
+        <span onclick="closeImage()">&times;</span>
         <img id="enlargedImage" alt="Enlarged photo">
     </div>
 
     <script>
         function openImage(img) {
-            document.getElementById("imageModal").style.display = "block";
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "flex";
             document.getElementById("enlargedImage").src = img.src;
         }
 
         function closeImage() {
             document.getElementById("imageModal").style.display = "none";
         }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeImage();
+            }
+        });
     </script>
 
     <!-- FOOTER -->
