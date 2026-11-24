@@ -191,7 +191,7 @@ img {
 }
 
 /* =========================================================
-   PAGE 1: HOME (#home) -> TEXT LEFT | PICTURE RIGHT
+   PAGE 1: HOME (#home) -> TEXT LEFT | SQUARE PICTURE RIGHT
    ========================================================= */
 #home {
     flex: 1;
@@ -203,29 +203,28 @@ img {
 
 .page {
     width: 100%;
-    max-width: 1260px;
-    height: 100%;
-    max-height: 540px;
+    max-width: 1120px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.55fr 0.75fr;
+    grid-template-columns: 1.35fr 380px;
     gap: 20px;
-    align-items: stretch;
+    align-items: center;
 }
 
 .intro {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 28px 32px;
+    border-radius: 10px;
+    padding: 26px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    min-height: 380px;
 }
 
 .intro h1 {
-    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    font-size: clamp(1.85rem, 3vw, 2.55rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
     font-weight: 700;
@@ -235,7 +234,7 @@ img {
 
 .intro h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 500;
     color: var(--accent-cobalt);
     width: 100%;
@@ -245,45 +244,47 @@ img {
 }
 
 .intro p:not(.welcome) {
-    font-size: 0.94rem;
-    line-height: 1.6;
+    font-size: 0.92rem;
+    line-height: 1.58;
     color: var(--text-secondary);
-    max-width: 62ch;
+    max-width: 56ch;
 }
 
 .picture {
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 14px;
+    border-radius: 10px;
+    padding: 12px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 0;
+    justify-self: center;
 }
 
 .picture img {
     width: 100%;
     height: 100%;
-    max-height: 100%;
     object-fit: cover;
     object-position: top center;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid var(--border-subtle);
 }
 
 /* =========================================================
-   PAGE 2: PERSONAL INFORMATION (#personal)
+   PAGE 2: PERSONAL INFORMATION (#personal) -> SQUARE BENTO TILES
    ========================================================= */
 #personal {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
     padding: 12px 24px;
-    max-width: 1320px;
+    max-width: 1180px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
@@ -310,27 +311,28 @@ img {
 }
 
 .personal-intro {
-    flex: 1;
-    min-height: 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) 0.85fr;
-    gap: 12px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
 }
 
 .info-card {
+    aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
-    padding: 14px 16px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     min-height: 0;
+    overflow: hidden;
 }
 
 .info-card-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -339,6 +341,7 @@ img {
     border-left: 3px solid var(--accent-cobalt);
     background: var(--tint-cobalt);
     color: #93C5FD;
+    flex-shrink: 0;
 }
 
 .info-card.education-card .info-card-title {
@@ -360,11 +363,14 @@ img {
 }
 
 .details-content {
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-size: 0.78rem;
-    line-height: 1.42;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    line-height: 1.35;
     color: var(--text-secondary);
 }
 
@@ -377,20 +383,21 @@ img {
     color: #93C5FD;
     text-decoration: underline;
     text-underline-offset: 2px;
+    word-break: break-word;
 }
 
 .art-gallery {
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
+    align-items: center;
 }
 
 .art-gallery img {
     width: 100%;
-    height: 100%;
-    min-height: 0;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid var(--border-subtle);
@@ -403,16 +410,16 @@ img {
 }
 
 /* =========================================================
-   PAGE 3: ACHIEVEMENTS (#achievement)
+   PAGE 3: ACHIEVEMENTS (#achievement) -> SQUARE CARDS
    ========================================================= */
 #achievement {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 28px;
-    max-width: 1260px;
+    justify-content: center;
+    gap: 14px;
+    padding: 12px 28px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
@@ -426,31 +433,31 @@ img {
 }
 
 .ach h1 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.15;
 }
 
 .ach p:not(.welcome) {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     margin-top: 2px;
 }
 
 .images {
-    flex: 1;
-    min-height: 0;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 380px));
+    justify-content: center;
+    gap: 24px;
 }
 
 .achievement-card {
+    aspect-ratio: 1 / 1;
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
-    padding: 16px 18px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -459,15 +466,16 @@ img {
 
 .achievement-header {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 6px 10px;
+    padding: 5px 10px;
     border-radius: 6px;
     border-left: 3px solid var(--accent-teal);
     background: var(--tint-teal);
     color: #5EEAD4;
+    flex-shrink: 0;
 }
 
 .achievement-card.cert-card .achievement-header {
@@ -481,15 +489,15 @@ img {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .achievement-content img {
     width: 100%;
-    flex: 1;
-    min-height: 0;
+    aspect-ratio: 4 / 3;
+    max-height: 185px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid var(--border-subtle);
     cursor: pointer;
     transition: border-color 0.15s ease;
@@ -500,46 +508,45 @@ img {
 }
 
 .achievement-content p {
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.78rem;
+    line-height: 1.4;
     color: var(--text-secondary);
 }
 
 /* =========================================================
-   PAGE 4: FAMILY AND FRIENDS (.friends-section)
+   PAGE 4: FAMILY AND FRIENDS (.friends-section) -> SQUARE CARDS
    ========================================================= */
 .friends-section {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
-    padding: 14px 28px;
-    max-width: 1320px;
+    padding: 12px 24px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
 }
 
 .friends-header h1 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
 
 .ff-split-grid {
-    flex: 1;
-    min-height: 0;
     display: grid;
-    grid-template-columns: 1.55fr 1fr;
-    gap: 16px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 14px;
+    align-items: stretch;
 }
 
 .ff-column {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
-    padding: 12px 14px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -548,7 +555,7 @@ img {
 
 .ff-group-title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -566,30 +573,28 @@ img {
 }
 
 .friends {
-    flex: 1;
-    min-height: 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
 }
 
 .family {
-    flex: 1;
-    min-height: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
 }
 
 .friend-card {
+    aspect-ratio: 1 / 1;
     background: var(--bg-elevated);
     border: 1px solid var(--border-subtle);
     border-radius: 8px;
-    padding: 9px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 6px;
     min-height: 0;
+    overflow: hidden;
     transition: border-color 0.15s ease;
 }
 
@@ -603,8 +608,8 @@ img {
 
 .friend-card img {
     width: 100%;
-    flex: 1;
-    min-height: 0;
+    aspect-ratio: 1 / 1;
+    max-height: 125px;
     object-fit: cover;
     object-position: top center;
     border-radius: 6px;
@@ -613,8 +618,8 @@ img {
 }
 
 .friend-card p {
-    font-size: 0.74rem;
-    line-height: 1.38;
+    font-size: 0.7rem;
+    line-height: 1.32;
     color: var(--text-secondary);
 }
 
@@ -691,10 +696,6 @@ img {
         flex-wrap: wrap;
     }
 
-    .page {
-        max-height: none;
-    }
-
     .page,
     .personal-intro,
     .images,
@@ -704,24 +705,30 @@ img {
         grid-template-columns: 1fr;
     }
 
+    .picture {
+        width: 100%;
+        height: auto;
+        max-width: 340px;
+    }
+
+    .info-card,
+    .achievement-card,
+    .friend-card {
+        aspect-ratio: auto;
+    }
+
     .personal-top-bar,
     .ach-top-bar {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .art-gallery {
-        grid-template-rows: 180px 180px;
-    }
-
     .picture img,
     .friend-card img,
     .achievement-content img {
-        max-height: 260px;
+        max-height: 240px;
     }
 }
-
-
 
 
 
