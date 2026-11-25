@@ -191,7 +191,7 @@ img {
 }
 
 /* =========================================================
-   PAGE 1: HOME (#home) -> TEXT LEFT | LARGE SQUARE PICTURE RIGHT
+   PAGE 1: HOME (#home) -> TEXT LEFT | SQUARE PICTURE RIGHT
    ========================================================= */
 #home {
     flex: 1;
@@ -275,7 +275,7 @@ img {
 }
 
 /* =========================================================
-   PAGE 2: PERSONAL INFORMATION (#personal) -> SCALED SQUARE BENTO TILES
+   PAGE 2: PERSONAL INFORMATION (#personal) -> SQUARE BENTO TILES
    ========================================================= */
 #personal {
     flex: 1;
@@ -410,7 +410,7 @@ img {
 }
 
 /* =========================================================
-   PAGE 3: ACHIEVEMENTS (#achievement) -> SCALED SQUARE CARDS
+   PAGE 3: ACHIEVEMENTS (#achievement) -> 3 SQUARE CARDS + GRADUATE TIMELINE
    ========================================================= */
 #achievement {
     flex: 1;
@@ -419,7 +419,7 @@ img {
     justify-content: center;
     gap: 18px;
     padding: 16px 36px;
-    max-width: 1120px;
+    max-width: 1380px;
     width: 100%;
     margin: 0 auto;
     min-height: 0;
@@ -447,9 +447,9 @@ img {
 
 .images {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 440px));
-    justify-content: center;
-    gap: 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
 }
 
 .achievement-card {
@@ -484,6 +484,12 @@ img {
     color: #FCD34D;
 }
 
+.achievement-card.grad-timeline-card .achievement-header {
+    border-left-color: var(--accent-indigo);
+    background: var(--tint-indigo);
+    color: #A5B4FC;
+}
+
 .achievement-content {
     flex: 1;
     min-height: 0;
@@ -513,8 +519,86 @@ img {
     color: var(--text-secondary);
 }
 
+/* Graduate Timeline inside Card 3 */
+.grad-timeline {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.grad-timeline::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: var(--border-strong);
+    z-index: 0;
+}
+
+.grad-step {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    transition: border-color 0.15s ease;
+}
+
+.grad-step:hover {
+    border-color: var(--accent-indigo);
+}
+
+.grad-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #A5B4FC;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    padding: 2px 7px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.grad-step img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 120px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+}
+
+.grad-step img:hover {
+    border-color: var(--accent-indigo);
+}
+
+.grad-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+}
+
 /* =========================================================
-   PAGE 4: FAMILY AND FRIENDS (.friends-section) -> SCALED SQUARE CARDS
+   PAGE 4: FAMILY AND FRIENDS (.friends-section) -> SQUARE CARDS
    ========================================================= */
 .friends-section {
     flex: 1;
@@ -699,20 +783,21 @@ img {
     .page,
     .personal-intro,
     .images,
+    .grad-timeline,
     .ff-split-grid,
     .friends,
     .family {
         grid-template-columns: 1fr;
     }
 
+    .grad-timeline::before {
+        display: none;
+    }
+
     .picture {
         width: 100%;
         height: auto;
         max-width: 380px;
-    }
-
-    .intro {
-        min-height: auto;
     }
 
     .info-card,
@@ -729,7 +814,8 @@ img {
 
     .picture img,
     .friend-card img,
-    .achievement-content img {
+    .achievement-content img,
+    .grad-step img {
         max-height: 260px;
     }
 }
