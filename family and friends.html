@@ -14,7 +14,6 @@
 
         <div class="compile">
             <ul>
-
                 <li>
                     <a href="index.html">HOME</a>
                 </li>
@@ -36,7 +35,6 @@
                         FAMILY AND FRIENDS
                     </a>
                 </li>
-
             </ul>
         </div>
 
@@ -45,9 +43,21 @@
     <!-- FAMILY AND FRIENDS SECTION -->
     <section class="friends-section">
 
-        <div class="friends-header">
-            <p class="welcome">CONNECTIONS &amp; MEMORIES</p>
-            <h1>FAMILY AND FRIENDS</h1>
+        <div class="friends-top-bar">
+            <div class="friends-header">
+                <p class="welcome">CONNECTIONS &amp; MEMORIES</p>
+                <h1>FAMILY AND FRIENDS</h1>
+            </div>
+
+            <div class="page-navigation">
+                <a href="achivements.html" class="previous-button">
+                    ← Previous
+                </a>
+
+                <a href="index.html" class="home-return-button">
+                    ⌂ Back to Home
+                </a>
+            </div>
         </div>
 
         <div class="ff-split-grid">
@@ -98,6 +108,13 @@
                              onclick="openImage(this)">
                         <p>My father—he might be strict, but I know he cares even when he doesn't show it.</p>
                     </article>
+
+                    <article class="friend-card family-card">
+                        <img src="sibling.png"
+                             alt="brother"
+                             onclick="openImage(this)">
+                        <p>My younger Brother, We are two years apart in age</p>
+                    </article>
                 </div>
             </div>
 
@@ -105,17 +122,39 @@
 
     </section>
 
-    <!-- Image popup -->
+    <!-- LIGHTBOX MODAL WITH NEXT / PREV GALLERY CONTROLS -->
     <div id="imageModal" onclick="closeImage()">
-        <span onclick="closeImage()">&times;</span>
-        <img id="enlargedImage" alt="Enlarged photo">
+        <span class="modal-close" onclick="closeImage()">&times;</span>
+        <button type="button" class="modal-nav modal-prev" onclick="event.stopPropagation(); changeImage(-1)" aria-label="Previous image">&#8249;</button>
+        <div class="modal-stage" onclick="event.stopPropagation()">
+            <img id="enlargedImage" alt="Enlarged photo">
+            <p id="modalCaption"></p>
+        </div>
+        <button type="button" class="modal-nav modal-next" onclick="event.stopPropagation(); changeImage(1)" aria-label="Next image">&#8250;</button>
     </div>
 
     <script>
+        let galleryImages = [];
+        let currentImageIndex = 0;
+
         function openImage(img) {
-            const modal = document.getElementById("imageModal");
-            modal.style.display = "flex";
-            document.getElementById("enlargedImage").src = img.src;
+            galleryImages = Array.from(document.querySelectorAll('img[onclick*="openImage"]'));
+            currentImageIndex = galleryImages.indexOf(img);
+            updateModalImage();
+            document.getElementById("imageModal").style.display = "flex";
+        }
+
+        function changeImage(step) {
+            if (!galleryImages.length) return;
+            currentImageIndex = (currentImageIndex + step + galleryImages.length) % galleryImages.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            const target = galleryImages[currentImageIndex];
+            document.getElementById("enlargedImage").src = target.src;
+            document.getElementById("modalCaption").textContent =
+                (target.alt || "Photo") + " (" + (currentImageIndex + 1) + " / " + galleryImages.length + ")";
         }
 
         function closeImage() {
@@ -123,19 +162,17 @@
         }
 
         document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeImage();
-            }
+            const modal = document.getElementById("imageModal");
+            if (modal.style.display !== "flex") return;
+            if (event.key === "Escape") closeImage();
+            if (event.key === "ArrowRight") changeImage(1);
+            if (event.key === "ArrowLeft") changeImage(-1);
         });
     </script>
 
     <!-- FOOTER -->
     <footer class="footer">
-
-        <p>
-            © 2026 Shadin M. Calatan | Personal Portfolio
-        </p>
-
+        <p>© 2026 Shadin M. Calatan | Personal Portfolio</p>
     </footer>
 
 </body>
